@@ -10,10 +10,10 @@ const fetchProductsList = () => {
 const deleteProduct = (productId, allProducts) => {
   const deletedProductList = localStorage.getItem('deletedProductList')
   const productThatBeenDeleted = allProducts.filter((item) => item.id === productId)[0].id
-  
+
   const updatedProductList = allProducts.filter((item) => item.id !== productId)
 
-  if(deletedProductList){
+  if (deletedProductList) {
     const idArr = deletedProductList.split(",")
     idArr.push(productThatBeenDeleted.toString())
     localStorage.setItem("deletedProductList", idArr)
